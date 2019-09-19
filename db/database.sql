@@ -1,19 +1,21 @@
-CREATE DATABASE IF NOT EXISTS company;
+CREATE DATABASE IF NOT EXISTS petro_bowl;
 
-USE company;
+USE petro_bowl;
 
-CREATE TABLE employee (
-  id INT(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE events (
+  eventId INT(11) NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) DEFAULT NULL,
-  salary INT(11) DEFAULT NULL, 
-  PRIMARY KEY(id)
+  eventDate DATE DEFAULT NULL,
+  address VARCHAR(100) DEFAULT NULL,
+  created_by VARCHAR(30) DEFAULT NULL,
+  created_at DATETIME NOT NULL,
+  updated_by VARCHAR(30) DEFAULT NULL,
+  updated_at DATETIME NOT NULL,
+  PRIMARY KEY(eventId)
 );
 
-DESCRIBE employee;
+DESCRIBE events;
 
-INSERT INTO employee values 
-  (1, 'Ryan Ray', 20000),
-  (2, 'Joe McMillan', 40000),
-  (3, 'John Carter', 50000);
+INSERT INTO events values(null, 'Petro bowl 2019', '2019/09/19', 'Barcelona', 'Luis Palma', '2019/09/19', 'Luis Palma', '2019/09/19');
 
-SELECT * FROM employee;
+SELECT * FROM events;
